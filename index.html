@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,202 +5,235 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PadelForFriends</title>
 <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f7f2;
-  color: #17251e;
-}
-header {
-  background: #123c2b;
-  color: white;
-  padding: 24px 20px;
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: auto;
-}
-.logo { font-size: 23px; font-weight: bold; }
-nav a { color: white; text-decoration: none; font-size: 14px; }
-.hero {
-  max-width: 1000px;
-  margin: auto;
-  padding: 55px 20px 65px;
-}
-.hero h1 { font-size: 42px; margin: 0 0 15px; }
-.hero p { font-size: 18px; line-height: 1.6; color: #e0eee5; }
-.button {
-  display: inline-block;
-  background: #b9ee65;
-  color: #173323;
-  padding: 14px 22px;
-  border-radius: 9px;
-  text-decoration: none;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-main {
-  max-width: 1000px;
-  margin: auto;
-  padding: 30px 20px;
-}
-h2 { font-size: 26px; }
-.intro { color: #65736a; line-height: 1.6; }
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 16px;
-  margin: 25px 0 40px;
-}
-.card {
-  background: white;
-  border-radius: 13px;
-  padding: 22px;
-  box-shadow: 0 3px 12px #17332312;
-}
-.card h3 { margin-top: 0; }
-.tag {
-  display: inline-block;
-  background: #e8f4dc;
-  color: #315b2b;
-  border-radius: 20px;
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: bold;
-}
-.details { color: #66736b; line-height: 1.8; font-size: 14px; }
-section { margin-bottom: 40px; }
-form {
-  background: white;
-  padding: 22px;
-  border-radius: 13px;
-  max-width: 550px;
-}
-input, select {
-  display: block;
-  width: 100%;
-  padding: 13px;
-  margin: 9px 0 17px;
-  border: 1px solid #d5ded6;
-  border-radius: 8px;
-  font-size: 16px;
-  background: white;
-}
-label { font-weight: bold; font-size: 14px; }
-footer {
-  background: #123c2b;
-  color: white;
-  text-align: center;
-  padding: 25px;
-  font-size: 14px;
-}
-.notice {
-  background: #fff5d9;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 13px;
-  color: #70551c;
-  line-height: 1.5;
-}
-@media(max-width: 500px) {
-  .hero h1 { font-size: 34px; }
-  nav a { font-size: 12px; }
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f6f4;color:#17251e}
+header{background:#123c2b;color:white;padding:22px 18px}
+nav{max-width:1000px;margin:auto;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;font-weight:bold}
+.hero{max-width:1000px;margin:auto;padding:45px 20px}
+h1{font-size:36px;margin:0 0 12px}
+.hero p{font-size:17px;line-height:1.5}
+button{background:#b9ee65;color:#173323;border:0;padding:13px 20px;border-radius:8px;font-weight:bold;cursor:pointer}
+button:hover{opacity:.85}
+.container{max-width:1000px;margin:auto;padding:10px 20px 50px}
+.panel{background:white;padding:22px;border-radius:14px;margin-bottom:25px;box-shadow:0 2px 10px #0000000c}
+h2{margin-top:0}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-weight:bold;font-size:14px}
+input,select{width:100%;padding:12px;margin-top:7px;border:1px solid #ccd5ce;border-radius:7px;font-size:16px}
+.full{grid-column:1/-1}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.game{background:white;border-radius:13px;padding:20px;border:1px solid #e0e8e2}
+.game h3{margin-top:0;color:#123c2b}
+.details{line-height:1.9;font-size:14px}
+.spots{font-weight:bold;color:#276d3c;margin:12px 0}
+.players{font-size:13px;color:#536258;margin-bottom:14px}
+.join{width:100%}
+.delete{background:#eee;color:#555;margin-top:8px;width:100%}
+.empty{text-align:center;padding:30px;color:#66736a}
+footer{text-align:center;padding:25px;color:#65736a;font-size:13px}
+@media(max-width:600px){
+form{grid-template-columns:1fr}
+.full{grid-column:auto}
+h1{font-size:30px}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <nav>
-    <div class="logo">🎾 PadelForFriends</div>
-    <a href="#games">Find a game</a>
-  </nav>
-  <div class="hero">
-    <h1>Padel is better together.</h1>
-    <p>Find players, organise games and meet new friends on the court.</p>
-    <a class="button" href="#games">Find your next game</a>
-  </div>
+<nav>
+<div class="logo">🎾 PadelForFriends</div>
+<div>PLAY · MEET · CONNECT</div>
+</nav>
 </header>
 
-<main>
-  <section id="games">
-    <h2>Find a game</h2>
-    <p class="intro">Discover games and bring your padel friends together.</p>
-    <div class="cards">
-      <div class="card">
-        <span class="tag">Beginner friendly</span>
-        <h3>Friendly Padel Match</h3>
-        <p class="details">📍 Your local padel club<br>
-        📅 Example date<br>
-        🕒 18:00<br>
-        👥 4 players needed</p>
-      </div>
-      <div class="card">
-        <span class="tag">Intermediate</span>
-        <h3>Evening Padel</h3>
-        <p class="details">📍 Your local padel club<br>
-        📅 Example date<br>
-        🕒 19:30<br>
-        👥 4 players needed</p>
-      </div>
-      <div class="card">
-        <span class="tag">All levels</span>
-        <h3>Weekend Padel</h3>
-        <p class="details">📍 Your local padel club<br>
-        📅 Example date<br>
-        🕒 10:00<br>
-        👥 4 players needed</p>
-      </div>
-    </div>
-    <p class="notice">These are sample games for the website preview. No real players are registered and no bookings are being made.</p>
-  </section>
+<section class="hero">
+<h1>Find your next padel game!</h1>
+<p>Meet new players, organise games and enjoy padel together.</p>
+<button onclick="document.getElementById('create').scrollIntoView({behavior:'smooth'})">
+Create a game
+</button>
+</section>
 
-  <section id="create">
-    <h2>Organise a game</h2>
-    <p class="intro">Want to play? Start by telling us what kind of game you want to organise.</p>
-    <form id="gameForm">
-      <label>Your name</label>
-      <input id="playerName" type="text" placeholder="Enter your name" required>
-      <label>Location or club</label>
-      <input id="club" type="text" placeholder="Where would you like to play?" required>
-      <label>Playing level</label>
-      <select id="level">
-        <option>Beginner</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-        <option>All levels</option>
-      </select>
-      <button class="button" type="submit">Create game idea</button>
-      <p id="message" class="details"></p>
-    </form>
-  </section>
+<main class="container">
 
-  <section>
-    <h2>Made for padel friends</h2>
-    <p class="intro">Our goal is simple: make it easier to find players, organise matches and enjoy more time on the court. Whether you're a beginner or an experienced player, everyone is welcome.</p>
-  </section>
+<section class="panel" id="create">
+<h2>➕ Create a new game</h2>
+<form id="gameForm">
+<div>
+<label>Your name</label>
+<input id="host" placeholder="Your name" required>
+</div>
+<div>
+<label>Club / Location</label>
+<input id="club" placeholder="Where are you playing?" required>
+</div>
+<div>
+<label>Date</label>
+<input id="date" type="date" required>
+</div>
+<div>
+<label>Time</label>
+<input id="time" type="time" required>
+</div>
+<div>
+<label>Playing level</label>
+<select id="level">
+<option>Beginner</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+<option>All levels</option>
+</select>
+</div>
+<div>
+<label>Number of players</label>
+<select id="capacity">
+<option value="2">2 players</option>
+<option value="4" selected>4 players</option>
+</select>
+</div>
+<div class="full">
+<button type="submit">Publish my game</button>
+</div>
+</form>
+</section>
+
+<section>
+<h2>🎾 Available games</h2>
+<div id="games" class="games"></div>
+</section>
+
 </main>
 
 <footer>
-  © 2026 PadelForFriends · Play together. Have fun.
+PadelForFriends · Play together. Meet new friends.
 </footer>
 
 <script>
-document.getElementById("gameForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  const name = document.getElementById("playerName").value;
-  const club = document.getElementById("club").value;
-  const level = document.getElementById("level").value;
-  document.getElementById("message").textContent =
-    "Thanks, " + name + "! Your " + level +
-    " game idea for " + club + " has been entered in this preview only. It has not been published or shared.";
-});
-</script>
+const STORAGE_KEY = "padelforFriendsGames";
 
+function getGames(){
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  } catch(e) {
+    return [];
+  }
+}
+
+function saveGames(games){
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(games));
+}
+
+function renderGames(){
+  const games=getGames();
+  const container=document.getElementById("games");
+
+  if(!games.length){
+    container.innerHTML='<div class="empty">No games yet. Be the first to create one! 🎾</div>';
+    return;
+  }
+
+  container.innerHTML="";
+
+  games.forEach(game=>{
+    const remaining=game.capacity-game.players.length;
+    const card=document.createElement("article");
+    card.className="game";
+
+    const title=document.createElement("h3");
+    title.textContent="🎾 "+game.club;
+
+    const details=document.createElement("div");
+    details.className="details";
+    details.textContent=
+      "Host: "+game.host+
+      " | Date: "+game.date+
+      " | Time: "+game.time+
+      " | Level: "+game.level;
+
+    const spots=document.createElement("div");
+    spots.className="spots";
+    spots.textContent=remaining>0
+      ? remaining+" place(s) available"
+      : "Game is full";
+
+    const players=document.createElement("div");
+    players.className="players";
+    players.textContent="Players: "+game.players.join(", ");
+
+    const join=document.createElement("button");
+    join.className="join";
+    join.textContent="Join game";
+    join.disabled=remaining<=0;
+    join.style.opacity=remaining<=0?".5":"1";
+
+    join.addEventListener("click",()=>{
+      const name=prompt("Enter your name to join:");
+      if(!name || !name.trim()) return;
+
+      const current=getGames();
+      const selected=current.find(g=>g.id===game.id);
+      if(!selected || selected.players.length>=selected.capacity) {
+        alert("Sorry, this game is already full.");
+        renderGames();
+        return;
+      }
+
+      if(selected.players.some(p=>p.toLowerCase()===name.trim().toLowerCase())){
+        alert("You have already joined this game.");
+        return;
+      }
+
+      selected.players.push(name.trim());
+      saveGames(current);
+      renderGames();
+      alert("You have joined the game!");
+    });
+
+    const remove=document.createElement("button");
+    remove.className="delete";
+    remove.textContent="Delete game";
+    remove.addEventListener("click",()=>{
+      if(!confirm("Delete this game?")) return;
+      saveGames(getGames().filter(g=>g.id!==game.id));
+      renderGames();
+    });
+
+    card.append(title,details,spots,players,join,remove);
+    container.appendChild(card);
+  });
+}
+
+document.getElementById("gameForm").addEventListener("submit",function(e){
+  e.preventDefault();
+
+  const game={
+    id:Date.now().toString(),
+    host:document.getElementById("host").value.trim(),
+    club:document.getElementById("club").value.trim(),
+    date:document.getElementById("date").value,
+    time:document.getElementById("time").value,
+    level:document.getElementById("level").value,
+    capacity:Number(document.getElementById("capacity").value),
+    players:[document.getElementById("host").value.trim()]
+  };
+
+  if(new Date(game.date+"T"+game.time)<new Date()){
+    alert("Please choose a future date and time.");
+    return;
+  }
+
+  const games=getGames();
+  games.push(game);
+  saveGames(games);
+  this.reset();
+  renderGames();
+  alert("Your game has been published!");
+  document.getElementById("games").scrollIntoView({behavior:"smooth"});
+});
+
+renderGames();
+</script>
 </body>
 </html>
